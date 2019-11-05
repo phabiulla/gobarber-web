@@ -19,7 +19,7 @@ export function signUpRequest(name, email, password) {
   };
 }
 
-export function signIFailure() {
+export function signFailure() {
   return {
     type: '@auth/SIGN_FAILURE',
   };

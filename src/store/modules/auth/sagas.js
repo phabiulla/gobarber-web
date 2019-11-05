@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import history from '~/services/history';
 import api from '~/services/api';
 
-import { signInSuccess, signIFailure } from './actions';
+import { signInSuccess, signFailure } from './actions';
 
 export function* signIn({ payload }) {
   try {
@@ -27,7 +27,7 @@ export function* signIn({ payload }) {
     history.push('/dashboard');
   } catch (err) {
     toast.error('Falha na autenticação, verifique seus dados.');
-    yield put(signIFailure());
+    yield put(signFailure());
   }
 }
 
@@ -44,7 +44,7 @@ export function* signUp({ payload }) {
     history.push('/');
   } catch (err) {
     toast.error('Falha no cadastro, verifique seus dados.');
-    yield put(signIFailure());
+    yield put(signFailure());
   }
 }
 export function setToken({ payload }) {
